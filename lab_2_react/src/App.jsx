@@ -8,9 +8,9 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-950 text-slate-200">
       <Header />
-      <main>
+      <main className="mx-auto grid max-w-5xl gap-6 px-4 py-10 md:grid-cols-2">
         <About />
         <Education />
         <Experience />
