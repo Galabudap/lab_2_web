@@ -6,12 +6,21 @@
   <meta name="description" content="Резюме Галабуди Павла">
   <meta name="author" content="Галабуда Павло">
   <title>Резюме — Галабуда Павло</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-footer {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+}
+  </style>
 </head>
 <body>
-  <header>
+ <body>
+  <header id="top">
     <h1>Галабуда Павло</h1>
-    <p>Студент групи КБ-208, НУ «Львівська політехніка»</p>
-    <nav>
+    <p style="font-size: 1.2rem; opacity: 0.9;">Студент групи КБ-208, НУ «Львівська політехніка»</p>
+    <nav class="main-nav">
       <ul>
         <li><a href="#about">Про мене</a></li>
         <li><a href="#education">Освіта</a></li>
@@ -22,36 +31,39 @@
     </nav>
   </header>
 
-  <main>
-    <section id="about">
+  <main class="layout">
+    <section id="about" class="card card-wide">
       <h2>Про мене</h2>
       <p>Я студент, навчаюсь у <strong>Національному університеті «Львівська політехніка»</strong>, група КБ-208.</p>
     </section>
 
-    <section id="education">
+    <section id="education" class="card">
       <h2>Освіта</h2>
       <ul>
-        <li>Повна загальна середня освіта</li>
-        <li>Зараз: бакалаврат, НУ «Львівська політехніка»</li>
+        <li>Повна загальна середня освіта, математичний ліцей ім. А. Шептицького</li>
+        <li>Зараз: бакалаврат, НУ «Львівська політехніка», спеціальність «Кібербезпека та захист інформації»</li>
       </ul>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="card">
       <h2>Досвід</h2>
       <p>Досвіду роботи поки немає.</p>
       <p>Навчальні проєкти: <a href="https://github.com/Galabudap/cybersecurity-python-labs" target="_blank">лабораторні з Python на GitHub</a>.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="card">
       <h2>Навички</h2>
-      <ul>
+      <ul class="skills-list">
         <li>Python</li>
         <li>C#</li>
         <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Git</li>
       </ul>
     </section>
 
-    <section id="contacts">
+    <section id="contacts" class="card">
       <h2>Контакти</h2>
       <address>
         Телефон: <a href="tel:+380676766767">+380 67 676 67 67</a><br>
@@ -61,8 +73,9 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="page-footer">
     <p>&copy; 2026 Галабуда Павло</p>
   </footer>
+</body>
 </body>
 </html>

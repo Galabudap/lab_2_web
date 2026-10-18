@@ -1,0 +1,161 @@
+/* ===== 1. Змінні з кольорами (щоб міняти колір в одному місці) ===== */
+:root {
+  --accent: #4f46e5;      /* основний фіолетово-синій */
+  --accent-dark: #3730a3;
+  --bg: #f1f5f9;          /* світло-сірий фон сторінки */
+  --text: #1e293b;        /* темний текст */
+  --border: #e2e8f0;      /* світлі рамки */
+}
+
+/* ===== 2. Блокова модель: розмір рахується разом із padding і border ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== 3. Селектори ТЕГІВ ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+}
+
+a {
+  color: var(--accent);
+}
+
+address {
+  font-style: normal;
+}
+
+/* ===== 4. Селектор ID: шапка сторінки ===== */
+#top {
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+}
+
+#top h1 {
+  font-size: 2.6rem;
+}
+
+/* ===== 5. Меню на FLEXBOX ===== */
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* ПСЕВДОКЛАСИ :hover (навели мишку) і :focus-visible (вибрали клавішею Tab) */
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: #fff;
+  color: var(--accent);
+}
+
+/* ===== 6. Основний макет на CSS GRID: дві колонки карток ===== */
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+/* ===== 7. Селектори КЛАСІВ: картки-розділи ===== */
+.card {
+  margin: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* картка на всю ширину (займає обидві колонки сітки) */
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+.card h2 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+  color: var(--accent);
+}
+
+/* навички у вигляді «таблеток» — теж Flexbox */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills-list li {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* ===== 8. Селектори АТРИБУТІВ ===== */
+/* посилання, що відкриваються в новій вкладці, отримують стрілочку */
+a[target="_blank"]::after {
+  content: " ↗";
+}
+
+/* посилання на пошту й телефон — жирні */
+a[href^="mailto:"],
+a[href^="tel:"] {
+  font-weight: 600;
+}
+
+/* ===== 9. МЕДІАЗАПИТ: вузький екран (телефон) ===== */
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr;   /* одна колонка замість двох */
+  }
+
+  .main-nav ul {
+    flex-direction: column;       /* меню стовпчиком */
+    align-items: center;
+  }
+
+  #top h1 {
+    font-size: 2rem;
+  }
+}
